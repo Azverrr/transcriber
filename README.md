@@ -27,7 +27,7 @@ docker build -t transcriber:gpu -f Dockerfile.gpu .
 # Или используй обёртку — соберёт автоматически при первом запуске
 ```
 
-Для удобства добавь `run.sh` в PATH:
+Для удобства добавить `run.sh` в PATH:
 
 ```bash
 ln -s "$(pwd)/run.sh" ~/.local/bin/transcribe
