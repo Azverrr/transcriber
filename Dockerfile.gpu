@@ -1,0 +1,12 @@
+FROM nvidia/cuda:12.6-runtime-ubuntu24.04
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 python3-pip ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir --break-system-packages faster-whisper yt-dlp
+
+WORKDIR /app
+COPY transcribe.py .
+
+ENTRYPOINT ["python3", "transcribe.py"]
